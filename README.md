@@ -1,14 +1,14 @@
-On the Ruby on Rails, ActionView has the method ```date_select``` provides us the inputs of date items as day, month and year. Each date item has its own input element.
+On the Ruby on Rails, ActionView has the method ```date_select``` provides us the selects of date items as day, month and year. Each date item has its own select element.
 
 ### Example:
-You can see the example of form input for date_select as follows:
+You can see the example of date_select as follows:
 ```html+erb
 <%= f.date_select :birthday, { start_year: 1923, end_year: Date.current.year - 15 }, class: 'date-item' %>
 ```
 
 The output of this example would be as follows:
 ```html
-<!-- input for day -->
+<!-- select for day -->
 <select id="user_birthday_1i" name="user[birthday(1i)]" class="date-item">
     <option value="1923">1923</option>
     <!-- ... -->
@@ -19,7 +19,7 @@ The output of this example would be as follows:
 
 <!-- ----------------------------------------------------------------- -->
 
-<!-- input for month -->
+<!-- select for month -->
 <select id="user_birthday_2i" name="user[birthday(2i)]" class="date-item">
     <option value="1">January</option>
     <!-- ... -->
@@ -30,7 +30,7 @@ The output of this example would be as follows:
 
 <!-- ----------------------------------------------------------------- -->
 
-<!-- input for year -->
+<!-- select for year -->
 <select id="user_birthday_3i" name="user[birthday(3i)]" class="date-item">
     <option value="1">1</option>
     <!-- ... -->
@@ -42,7 +42,7 @@ The output of this example would be as follows:
 
 As you can see, ```date_select``` method created 3 ```select``` element with options for each date item.
 
-If you want to create all inputs of date items in a specific html tag, you can create an initializer in your rails projects like [this](date_select_separation.rb) or if you are lazy, you can run this curl command in your project directory:
+If you want to create all selects of date items in a specific html tag, you can create an initializer in your rails projects like [this](date_select_separation.rb) or if you are lazy, you can run this curl command in your project directory:
 ```bash
 curl -o config/initializers/date_select_separation.rb https://raw.githubusercontent.com/sertangulveren/date_select_tag_separator/master/date_select_separation.rb
 ```
@@ -59,7 +59,7 @@ If your initializer is ready, you can use the ```tag_separator``` option as foll
                   class: 'form-control' %>
 ```
 
-This will creates a ```div``` element with the ```col```  class and inserts the inputs of each date items into div element. The output of this would be as follows:
+This will creates a ```div``` element with the ```col```  class and inserts the selects of each date items into div element. The output of this would be as follows:
 
 ```html
 <div class="col">
